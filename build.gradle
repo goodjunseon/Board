@@ -32,7 +32,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'mysql:mysql-connector-java:8.0.33' // 이거 없으면 DB연결 안되서 안켜짐
 	runtimeOnly 'mysql:mysql-connector-java' // 데이터베이스 드라이버 의존성 추가하기
+//	implementation 'org.hibernate:hibernate-core:6.6.8.Final' // 이미 Spring boot 3.4.4 내부에 호환되는 버전이 있음
 
+	// lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
@@ -43,3 +45,8 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+tasks.withType(JavaCompile) {
+	options.compilerArgs << "-parameters"
+}
+

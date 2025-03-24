@@ -14,10 +14,10 @@ spring:
 
   # spring data jpa 설정
   jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect # MySQL5InnoDBDialect (병신) # MySQL8Dialect
+    database-platform: org.hibernate.dialect.MySQL8Dialect
     open-in-view: false
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: update # Data Definition Language: 테이블을 만들고 수정하고 삭제하는 명령어
     properties:
       hibernate.transaction.jta.platform: org.hibernate.service.jta.JtaPlatform
